@@ -1,28 +1,13 @@
-import React from "react";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css'; // Aquí irá el diseño oscuro
+import SecondsCounter from './SecondsCounter';
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
-//create your first component
-const Home = () => {
-	return (
-		<div className="text-center">
-            
-
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
-	);
-};
-
+let counter = 0;
+setInterval(() => {
+    root.render(<SecondsCounter seconds={counter} />);
+    counter++;
+}, 1000);
 export default Home;

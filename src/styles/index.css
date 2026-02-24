@@ -9,3 +9,37 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+body {
+    background-color: #101010;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.bigCounter {
+    display: flex;
+    background: black;
+    padding: 20px;
+    border-radius: 10px;
+    gap: 10px;
+}
+
+.digit {
+    background: #1a1a1a;
+    color: white;
+    font-size: 75px;
+    font-family: sans-serif;
+    padding: 10px 20px;
+    border: 1px solid #333;
+    border-radius: 6px;
+    min-width: 70px;
+    text-align: center;
+}
+
+/* Estilo para el icono del reloj */
+.digit i {
+    font-size: 65px;
+    line-height: 75px;
+}

@@ -1,18 +1,18 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-//Bootstrap
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap"
+// Importamos los estilos y el componente
+import "../styles/index.css";
+import SecondsCounter from "./components/SecondsCounter.jsx";
 
-// index.css'
-import '../styles/index.css'
+// Seleccionamos el div con id "root" de HTML
 
-// components
-import Home from './components/Home';
+const root = ReactDOM.createRoot(document.querySelector("#root"));
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <Home/>
-  </React.StrictMode>,
-)
+let counter = 0;
+
+// El motor: suma 1 al contador y vuelve a renderizar cada 1000ms
+setInterval(() => {
+    root.render(<SecondsCounter seconds={counter} />);
+    counter++;
+}, 1000);
